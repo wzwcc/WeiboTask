@@ -31,7 +31,7 @@ jobs:
       id: create_release
       uses: actions/create-release@v1
       env:
-        GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         tag_name: ${{ github.event.inputs.version }}
         release_name: WeiboTask-v${{ github.event.inputs.version }}
@@ -41,7 +41,7 @@ jobs:
     - name: Upload windows_86
       uses: actions/upload-release-asset@v1
       env:
-        GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: ./release/WeiboTask-windows_86-v${{ github.event.inputs.version }}.zip
@@ -51,7 +51,7 @@ jobs:
     - name: Upload linux_64
       uses: actions/upload-release-asset@v1
       env:
-        GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: ./release/WeiboTask-linux_64-v${{ github.event.inputs.version }}.tar
@@ -61,7 +61,7 @@ jobs:
     - name: Upload linux_arm
       uses: actions/upload-release-asset@v1
       env:
-        GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: ./release/WeiboTask-linux_arm-v${{ github.event.inputs.version }}.tar
@@ -71,7 +71,7 @@ jobs:
     - name: Upload linux_arm64
       uses: actions/upload-release-asset@v1
       env:
-        GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: ./release/WeiboTask-linux_arm64-v${{ github.event.inputs.version }}.tar
@@ -81,7 +81,7 @@ jobs:
     - name: Upload linux_mips
       uses: actions/upload-release-asset@v1
       env:
-        GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: ./release/WeiboTask-linux_mips-v${{ github.event.inputs.version }}.tar
@@ -91,7 +91,7 @@ jobs:
     - name: Upload linux_mipsle
       uses: actions/upload-release-asset@v1
       env:
-        GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: ./release/WeiboTask-linux_mipsle-v${{ github.event.inputs.version }}.tar
@@ -101,7 +101,7 @@ jobs:
     - name: Upload linux_mips ipk
       uses: actions/upload-release-asset@v1
       env:
-        GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: ./ipk/WeiboTask_${{ github.event.inputs.version }}_mips.ipk
@@ -111,7 +111,7 @@ jobs:
     - name: Upload linux_mipsle ipk
       uses: actions/upload-release-asset@v1
       env:
-        GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: ./ipk/WeiboTask_${{ github.event.inputs.version }}_mipsle.ipk
